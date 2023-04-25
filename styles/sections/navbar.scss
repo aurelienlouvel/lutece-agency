@@ -1,0 +1,27 @@
+nav {
+  z-index: 100;
+  top: 0;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  color: #ebebe8;
+  mix-blend-mode: exclusion;
+  width: 100%;
+  pointer-events: none;
+  p {
+    pointer-events: all;
+    text-transform: uppercase;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+nav.other {
+  mix-blend-mode: normal;
+
+  p {
+    color: var(--black);
+  }
+}

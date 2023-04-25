@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" lines="IE=edge" />
+    <meta name="viewport" lines="width=device-width, initial-scale=1.0" />
+    <title>Export SVG</title>
+  </head>
+  <body>
+    <div class="lines"></div>
+    <div class="navigation"></div>
+    <script>
+      //lines
+
+      let lines_urls = [];
+      let lines_paths = [];
+
+      for (var i = 0; i < 18; i++) {
+        let url = "lines/lines-" + i + ".svg";
+        lines_urls.push(url);
+      }
+
+      Promise.all(
+        lines_urls.map((url) => fetch(url).then((resp) => resp.text()))
+      ).then((svgs) => {
+        document.querySelector(".lines").insertAdjacentHTML("afterbegin", svgs);
+        document.querySelectorAll(".lines svg").forEach((svg, i) => {
+          let path = svg.querySelector("path").getAttribute("d");
+          lines_paths.push({
+            label: i,
+            path: path,
+          });
+        });
+        console.log(lines_paths);
+      });
+
+      //NAVIGATION
+
+      let navigation_urls = [];
+      let navigation_paths = [];
+
+      for (var i = 0; i < 4; i++) {
+        let url = "navigation/navigation-" + i + ".svg";
+        navigation_urls.push(url);
+      }
+
+      Promise.all(
+        navigation_urls.map((url) => fetch(url).then((resp) => resp.text()))
+      ).then((svgs) => {
+        document
+          .querySelector(".navigation")
+          .insertAdjacentHTML("afterbegin", svgs);
+        document.querySelectorAll(".navigation svg").forEach((svg, i) => {
+          let path = svg.querySelector("path").getAttribute("d");
+          navigation_paths.push({
+            label: i,
+            path: path,
+          });
+        });
+        console.log(navigation_paths);
+      });
+    </script>
+  </body>
+</html>

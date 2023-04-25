@@ -1,0 +1,48 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.dg.ac {
+  z-index: 100;
+}
+
+body {
+  cursor: none;
+  margin: 0;
+  font-family: "Nimbus Sans L", sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--black);
+}
+
+html::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
+main {
+  margin: -0.5vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--wheat);
+  border-radius: 40px;
+  z-index: 1;
+  color: var(--black);
+  overflow: hidden;
+
+  section {
+    background-color: var(--wheat);
+  }
+}
+
+.menu,
+header,
+main,
+footer {
+  cursor: auto;
+}

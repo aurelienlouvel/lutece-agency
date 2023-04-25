@@ -1,0 +1,535 @@
+.agency {
+  position: relative;
+  height: auto;
+  width: 100%;
+
+  .intro {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    padding: 0 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 10vh;
+
+    .ribbon {
+      width: 0%;
+      position: absolute;
+      top: 70%;
+      left: 0;
+      transform: translate(-50%, -50%) rotate(-10deg);
+      height: 56px;
+      overflow: hidden;
+      white-space: nowrap;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      align-items: center;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      -ms-justify-content: center;
+      justify-content: center;
+      -ms-flex-pack: center;
+      background-color: var(--yellow-medium);
+      transition: all 0.5s ease-in-out;
+
+      span {
+        font-size: 1em;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        -moz-animation: marquee 4s linear infinite;
+        -webkit-animation: marquee 4s linear infinite;
+        animation: marquee 4s linear infinite;
+        text-transform: uppercase;
+      }
+    }
+
+    @keyframes marquee {
+      0% {
+        left: 0;
+        -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+      }
+
+      100% {
+        left: 0;
+        -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+      }
+    }
+
+    .section__name {
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .top {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      width: 100%;
+      align-items: center;
+
+      h1 {
+        font-size: clamp(3rem, 7vw, 7.5rem);
+        font-variation-settings: "wght" 470, "wdth" 100;
+        line-height: 120%;
+      }
+
+      h1:not(:nth-child(1)) {
+        color: var(--red-medium);
+      }
+
+      .prete {
+        color: var(--red-medium);
+      }
+
+      div {
+        gap: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .dash {
+          width: 16vw;
+          height: 0.5rem;
+          background-color: var(--red-medium);
+        }
+      }
+
+      .under {
+        border-bottom: 4px solid var(--red-medium);
+      }
+    }
+
+    .bottom {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      .info {
+        h5 {
+          line-height: 125%;
+        }
+      }
+
+      .jobs {
+        display: flex;
+        flex-direction: column;
+        text-transform: uppercase;
+        padding: 0.5rem;
+        border-radius: 10px;
+        width: fit-content;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+
+        h5 {
+          cursor: pointer;
+          display: inline;
+          width: fit-content;
+          border-bottom: 1px solid;
+          transition: all 0.3s ease-in-out;
+          line-height: 125%;
+        }
+
+        a {
+          cursor: pointer;
+          pointer-events: all;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 0;
+          inset: 0;
+          height: 100%;
+          background: var(--red-medium);
+          z-index: -1;
+          transition: all 0.3s ease-in-out;
+          border-radius: 0.5rem;
+        }
+
+        &:hover {
+          h5 {
+            color: var(--white);
+          }
+
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .vision {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--wheat);
+
+    .mask {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+      background-color: var(--black);
+      overflow: hidden;
+      border-radius: 0rem;
+
+      img {
+        position: absolute;
+        width: 110%;
+        height: 110%;
+        object-fit: cover;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .text {
+      width: 100%;
+      padding: 6rem 5rem;
+      height: 100%;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      h2 {
+        z-index: 2;
+        text-transform: uppercase;
+        color: var(--wheat);
+        width: fit-content;
+        font-size: clamp(3rem, 2.5vw, 10rem);
+        display: flex;
+        flex-direction: column;
+
+        .split-parent {
+          width: fit-content;
+        }
+
+        &:last-child {
+          align-self: flex-end;
+          align-items: flex-end;
+
+          .creative,
+          .simple,
+          .open-minded {
+            transition: all 0.3s ease;
+          }
+        }
+      }
+    }
+  }
+
+  .about {
+    height: auto;
+    width: 100%;
+    padding: 6rem 5rem;
+    position: relative;
+    overflow: hidden;
+    align-items: flex-start;
+
+    .section__name {
+      text-transform: uppercase;
+      text-align: left;
+    }
+
+    h1 {
+      width: 100%;
+      font-size: clamp(2rem, 6vw, 7rem);
+      position: relative;
+      line-height: 115%;
+      font-variation-settings: "wght" 469, "wdth" 100;
+
+      .entrepreuneurship-effect {
+        position: relative;
+        display: inline-block;
+
+        .entrepreuneurship {
+          transition: all 0.3s ease;
+
+          div div {
+            line-height: 80%;
+            border-bottom: 4px solid;
+          }
+        }
+      }
+
+      .innovation-effect {
+        position: relative;
+        display: inline-block;
+
+        .innovation-stars {
+          position: absolute;
+          top: -80%;
+          display: none;
+
+          img {
+            margin: 0.3rem;
+            position: relative;
+            z-index: 2;
+            transition: 0.3s;
+            pointer-events: none;
+          }
+        }
+
+        .innovation {
+          transition: all 0.3s ease;
+
+          div div {
+            line-height: 80%;
+            border-bottom: 4px solid;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .agency {
+    .intro {
+      padding: 0 4rem;
+
+      .top {
+        div {
+          .dash {
+            height: 0.3rem;
+          }
+        }
+      }
+
+      .bottom {
+        justify-content: space-between;
+      }
+    }
+
+    .vision {
+      height: 100vh;
+
+      .text {
+        width: 100%;
+        padding: 5rem 4rem;
+        height: 100%;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h2 {
+          width: 100%;
+          font-size: clamp(2rem, 1vw, 4rem);
+        }
+
+        br {
+          display: none;
+        }
+      }
+    }
+
+    .about {
+      height: auto;
+      padding: 5rem 4rem;
+
+      .section__name {
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 2rem;
+
+        br {
+          display: none;
+        }
+      }
+
+      h1 {
+        .entrepreuneurship-effect {
+          position: relative;
+          display: inline-block;
+          color: var(--green-medium);
+
+          .entrepreuneurship {
+            div div {
+              border-bottom: 2px solid;
+            }
+          }
+        }
+
+        .innovation-effect {
+          position: relative;
+          display: inline-block;
+
+          .innovation {
+            div div {
+              border-bottom: 2px solid;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .agency {
+    .intro {
+      padding: 0 2rem;
+
+      .top {
+        align-items: flex-start;
+
+        h1 {
+          font-size: clamp(2.5rem, 7vw, 7.5rem);
+          text-align: left;
+          display: inline-block;
+          // flex-wrap: wrap;
+        }
+
+        div {
+          .dash {
+            display: none;
+          }
+        }
+      }
+
+      .bottom {
+
+        .fr h5 {
+          font-size: 0.8rem;
+        }
+
+        .jobs.fr {
+          align-items: flex-end;
+        }
+
+      }
+    }
+
+    .vision {
+      height: 100vh;
+
+      .text {
+        width: 100%;
+        padding: 3rem 5vw;
+        height: 100%;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h2 {
+          font-size: clamp(1rem, 7vw, 8rem);
+          width: 100%;
+
+          &:last-child {
+            text-align: end;
+          }
+        }
+      }
+    }
+
+    .about {
+      height: auto;
+      padding: 3rem 2rem;
+
+      .section__name {
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 2rem;
+
+        br {
+          display: none;
+        }
+      }
+
+      h1 {
+        line-height: 146%;
+
+        .entrepreuneurship-effect {
+          position: relative;
+          display: inline-block;
+
+          .about {
+            height: auto;
+            padding: 3rem 2rem;
+
+            .section__name {
+              text-transform: uppercase;
+              text-align: center;
+              margin-bottom: 2rem;
+
+              br {
+                display: none;
+              }
+            }
+
+            h1 {
+              line-height: 146%;
+
+              .entrepreuneurship-effect {
+                position: relative;
+                display: inline-block;
+
+                .entrepreuneurship {
+                  color: var(--green-medium);
+                  div div {
+                    border-bottom: 2px solid;
+                  }
+                }
+              }
+
+              .innovation-effect {
+                position: relative;
+                display: inline-block;
+                color: var(--orange-light);
+
+                .innovation {
+                  div div {
+                    border-bottom: 2px solid;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (hover: none) {
+  .agency {
+    .about {
+      h1 {
+        .entrepreuneurship-effect {
+          color: var(--green-medium);
+        }
+
+        .innovation-effect {
+          color: var(--orange-light);
+        }
+      }
+    }
+  }
+}

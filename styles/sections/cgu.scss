@@ -1,0 +1,32 @@
+main {
+    position: relative;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.nav a {
+    text-transform: uppercase;
+}
+
+.cgu, .ml {
+    width: 100%;
+    padding: 6rem 5rem;
+
+    h2 {
+        font-variation-settings: "wght" 470, "wdth" 100;
+        text-transform: uppercase;
+    }
+
+    h3 {
+        font-variation-settings: "wght" 470, "wdth" 100;
+        margin-top: 2rem;
+    }
+
+    p {
+        margin: 1rem 0;
+    }
+
+    .no-decoration li {
+        list-style-type: none;
+    }
+}
